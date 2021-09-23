@@ -2,4 +2,3 @@
 *.orig
 *.rej
 config.h~
-*.diff
