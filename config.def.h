@@ -38,7 +38,7 @@ static const Rule rules[] = {
 	{ "webstorm", NULL,       NULL,       1 << 6,       0,           -1 },
 	{ "Feem",     NULL,       NULL,       1 << 5,       0,           -1 },
 { "netease-cloud-music",NULL,     NULL,       1 << 4,       0,           -1 },
-	{ "smplayer", NULL,       NULL,       1 << 3,       0,           -1 },
+	{ "mpv",      NULL,       NULL,       1 << 3,       0,           -1 },
 	{ "Wps",      NULL,       NULL,       1 << 2,       0,           -1 },
 	{ "Zathura",  NULL,       NULL,       1 << 2,       0,           -1 },
 };
