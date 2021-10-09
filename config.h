@@ -118,9 +118,9 @@ static Key keys[] = {
 	{ KeyPress,	MODKEY|Mod1Mask|ShiftMask,    XK_Down,   spawn,          {.v = sounddown } },
 	{ KeyPress,	MODKEY|Mod1Mask|ShiftMask,    XK_space,  spawn,          {.v = soundmute } },
 
-	{ KeyRelease,	ShiftMask,		      XK_Print,  spawn,          {.v = screenshotpart } },
-	{ KeyPress,	MODKEY,			      XK_Print,  spawn,          {.v = screenshotwindow } },
-	{ KeyPress,	Mod1Mask,		      XK_Print,  spawn,          {.v = screenshotfull } },
+	{ KeyRelease,	ShiftMask,		      0x5c,  spawn,          {.v = screenshotpart } },
+	{ KeyPress,	MODKEY,			      0x5c,  spawn,          {.v = screenshotwindow } },
+	{ KeyPress,	Mod1Mask,		      0x5c,  spawn,          {.v = screenshotfull } },
 
 	{ KeyPress,	MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ KeyPress,	MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
