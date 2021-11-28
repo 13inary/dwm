@@ -85,7 +85,7 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
-static const char *termcmd[]  = { "st", NULL };
+static const char *termcmd[]  = { "alacritty", NULL };
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "50x15", NULL };
 static const char *slockscreen[]  = { "slock", NULL };
@@ -96,6 +96,7 @@ static const char *lightdown[] = {"/home/zombie/.dwm/light-down.sh", NULL};
 static const char *soundup[] = {"/home/zombie/.dwm/sound-up.sh", NULL};
 static const char *sounddown[] = {"/home/zombie/.dwm/sound-down.sh", NULL};
 static const char *soundmute[] = {"/home/zombie/.dwm/sound-mute.sh", NULL};
+static const char *touchpadswitch[] = { "/home/zombie/.dwm/touchpad-switch.sh", NULL};
 static const char *barmessage[] = {"/home/zombie/.dwm/bar-message.sh", NULL};
 static const char *screenshotpart[] = {"/home/zombie/.dwm/screenshot-part.sh", NULL};
 static const char *screenshotwindow[] = {"/home/zombie/.dwm/screenshot-window.sh", NULL};
@@ -117,6 +118,7 @@ static Key keys[] = {
 	{ KeyPress,	MODKEY|Mod1Mask|ShiftMask,    XK_Up,     spawn,          {.v = soundup } },
 	{ KeyPress,	MODKEY|Mod1Mask|ShiftMask,    XK_Down,   spawn,          {.v = sounddown } },
 	{ KeyPress,	MODKEY|Mod1Mask|ShiftMask,    XK_space,  spawn,          {.v = soundmute } },
+	{ KeyPress,	MODKEY|Mod1Mask|ShiftMask,    XK_t,		 spawn,          {.v = touchpadswitch } },
 
 	{ KeyRelease,	ShiftMask,		      0xffc7,  spawn,          {.v = screenshotpart } },
 	{ KeyPress,	MODKEY,			      0xffc7,  spawn,          {.v = screenshotwindow } },
