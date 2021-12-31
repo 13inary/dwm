@@ -34,9 +34,9 @@ static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
 	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
-	{ "idea",     NULL,       NULL,       1 << 7,       0,           -1 },
-	{ "webstorm", NULL,       NULL,       1 << 6,       0,           -1 },
-	{ "Feem",     NULL,       NULL,       1 << 5,       0,           -1 },
+	{ "Go",     NULL,       NULL,       1 << 7,       0,           -1 },
+	{ "interface", NULL,       NULL,       1 << 6,       0,           -1 },
+	{ "xxx",     NULL,       NULL,       1 << 5,       0,           -1 },
 { "netease-cloud-music",NULL,     NULL,       1 << 4,       0,           -1 },
 	{ "mpv",      NULL,       NULL,       1 << 3,       0,           -1 },
 	{ "Wps",      NULL,       NULL,       1 << 2,       0,           -1 },
@@ -101,6 +101,7 @@ static const char *barmessage[] = {"/home/zombie/.dwm/bar-message.sh", NULL};
 static const char *screenshotpart[] = {"/home/zombie/.dwm/screenshot-part.sh", NULL};
 static const char *screenshotwindow[] = {"/home/zombie/.dwm/screenshot-window.sh", NULL};
 static const char *screenshotfull[] = {"/home/zombie/.dwm/screenshot-full.sh", NULL};
+static const char *screenshotocr[] = {"/home/zombie/.dwm/tesseractSimEng.sh", NULL};
 
 static Key keys[] = {
 	/* type		modifier                     key        function        argument */
@@ -123,6 +124,7 @@ static Key keys[] = {
 	{ KeyRelease,	ShiftMask,		      0xffc7,  spawn,          {.v = screenshotpart } },
 	{ KeyPress,	MODKEY,			      0xffc7,  spawn,          {.v = screenshotwindow } },
 	{ KeyPress,	Mod1Mask,		      0xffc7,  spawn,          {.v = screenshotfull } },
+	{ KeyRelease,	Mod4Mask,		      0xffc7,  spawn,          {.v = screenshotocr } },
 
 	{ KeyPress,	MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ KeyPress,	MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
