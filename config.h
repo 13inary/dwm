@@ -126,11 +126,11 @@ static Key keys[] = {
 	{ KeyPress,	Mod1Mask,		      0xffc7,  spawn,          {.v = screenshotfull } },
 	{ KeyRelease,	Mod4Mask,		      0xffc7,  spawn,          {.v = screenshotocr } },
 
-	{ KeyPress,	MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
-	{ KeyPress,	MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
-	{ KeyPress,	MODKEY,                       XK_l,      focusstack,     {.i = +1 } },
-	{ KeyPress,	MODKEY,                       XK_h,      focusstack,     {.i = -1 } },
-	{ KeyPress,	MODKEY,			      XK_m,      focusmaster,    {.i = +1} },
+	{ KeyPress,	Mod1Mask,                       XK_j,      focusstack,     {.i = +1 } },
+	{ KeyPress,	Mod1Mask,                       XK_k,      focusstack,     {.i = -1 } },
+	{ KeyPress,	Mod1Mask,                       XK_l,      focusstack,     {.i = +1 } },
+	{ KeyPress,	Mod1Mask,                       XK_h,      focusstack,     {.i = -1 } },
+	{ KeyPress,	Mod1Mask,			      XK_m,      focusmaster,    {.i = +1} },
 
 	{ KeyPress,	MODKEY|Mod1Mask,	      XK_j,      inplacerotate,  {.i = +1} },
 	{ KeyPress,	MODKEY|Mod1Mask,	      XK_k,      inplacerotate,  {.i = -1} },
@@ -179,10 +179,6 @@ static Key keys[] = {
 	{ KeyPress,	Mod4Mask|ShiftMask,           XK_comma,  tagmon,         {.i = -1 } },
 	{ KeyPress,	Mod4Mask|ShiftMask,           XK_period, tagmon,         {.i = +1 } },
 
-	{ KeyPress,	Mod1Mask,                     XK_h,      viewtoleft,     {0} },
-	{ KeyPress,	Mod1Mask,                     XK_l,      viewtoright,    {0} },
-	{ KeyPress,	Mod1Mask|ShiftMask,           XK_h,      tagtoleft,      {0} },
-	{ KeyPress,	Mod1Mask|ShiftMask,           XK_l,      tagtoright,     {0} },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)

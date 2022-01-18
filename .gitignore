@@ -2,3 +2,5 @@
 *.orig
 *.rej
 config.h~
+config.h
+dwm
