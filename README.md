@@ -118,8 +118,8 @@ wmname LG3D
 when open computer, set console font size
 ```shell
 sudo vim /etc/default/console-setup
-FONTSIZE
-FONTFACE
+FONTSIZE="16x32"
+#FONTFACE="Fixed"
 ```
 
 

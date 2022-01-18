@@ -24,7 +24,7 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "T", "t", "text", "video", "music", "feem", "web", "idea", "browser" };
+static const char *tags[] = { "T", "t", "text", "video", "music", "XXX", "test", "work", "browser" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -91,17 +91,17 @@ static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "50x15"
 static const char *slockscreen[]  = { "slock", NULL };
 static const char *systempoweroff[]  = { "poweroff", NULL };
 static const char *systemreboot[]  = { "reboot", NULL };
-static const char *lightup[] = {"/home/zombie/.dwm/light-up.sh", NULL};
-static const char *lightdown[] = {"/home/zombie/.dwm/light-down.sh", NULL};
-static const char *soundup[] = {"/home/zombie/.dwm/sound-up.sh", NULL};
-static const char *sounddown[] = {"/home/zombie/.dwm/sound-down.sh", NULL};
-static const char *soundmute[] = {"/home/zombie/.dwm/sound-mute.sh", NULL};
-static const char *touchpadswitch[] = { "/home/zombie/.dwm/touchpad-switch.sh", NULL};
-static const char *barmessage[] = {"/home/zombie/.dwm/bar-message.sh", NULL};
-static const char *screenshotpart[] = {"/home/zombie/.dwm/screenshot-part.sh", NULL};
-static const char *screenshotwindow[] = {"/home/zombie/.dwm/screenshot-window.sh", NULL};
-static const char *screenshotfull[] = {"/home/zombie/.dwm/screenshot-full.sh", NULL};
-static const char *screenshotocr[] = {"/home/zombie/.dwm/tesseractSimEng.sh", NULL};
+static const char *lightup[] = {"/usr/local/dwmScript/light-up.sh", NULL};
+static const char *lightdown[] = {"/usr/local/dwmScript/light-down.sh", NULL};
+static const char *soundup[] = {"/usr/local/dwmScript/sound-up.sh", NULL};
+static const char *sounddown[] = {"/usr/local/dwmScript/sound-down.sh", NULL};
+static const char *soundmute[] = {"/usr/local/dwmScript/sound-mute.sh", NULL};
+static const char *touchpadswitch[] = { "/usr/local/dwmScript/touchpad-switch.sh", NULL};
+static const char *barmessage[] = {"/usr/local/dwmScript/bar-message.sh", NULL};
+static const char *screenshotpart[] = {"/usr/local/dwmScript/screenshot-part.sh", NULL};
+static const char *screenshotwindow[] = {"/usr/local/dwmScript/screenshot-window.sh", NULL};
+static const char *screenshotfull[] = {"/usr/local/dwmScript/screenshot-full.sh", NULL};
+static const char *screenshotocr[] = {"/usr/local/dwmScript/tesseractSimEng.sh", NULL};
 
 static Key keys[] = {
 	/* type		modifier                     key        function        argument */
