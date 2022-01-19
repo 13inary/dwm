@@ -55,6 +55,6 @@ fi
 #echo "=========END======="
 #echo "current head : `amixer get Headphone | awk -F'[][]' 'END{ print $6 }'`"
 #echo "current speaker  : `amixer get Speaker | awk -F'[][]' 'END{ print $6 }'`"
-~/.dwm/bar-message.sh
+/usr/local/dwmScript/bar-message.sh
 #amixer -qM sset Master unmute
 #amixer -qM sset Headphone toggle

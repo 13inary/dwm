@@ -2,7 +2,8 @@
 
 MYCURRENTSOUND=""
 if [ `amixer get Master | awk -F'[][]' 'END{ print $6 }'` == "on" ] ; then
-	if [ "`amixer cget numid=18 | grep ": values=" | awk -F'=' 'END{ print $2 }'`" == "on" ] ; then
+	MYIFHEADPHONE=`amixer contents | grep ",iface=CARD,name='Headphone" | awk -F'=' '{ print $2 }' | awk -F',' '{ print $1 }'`
+	if [ "`amixer cget numid=$MYIFHEADPHONE | grep ": values=" | awk -F'=' 'END{ print $2 }'`" == "on" ] ; then
 		MYCURRENTSOUND="H`amixer get Headphone | awk -F'[][]' 'END{ print $2 }'`"
 	else
 		MYCURRENTSOUND="S`amixer get Speaker | awk -F'[][]' 'END{ print $2 }'`"

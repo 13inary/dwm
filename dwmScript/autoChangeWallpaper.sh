@@ -1,6 +1,6 @@
 #!/bin/bash
 while true
 do
-	~/.dwm/changeWallpaper.sh
+	/usr/local/dwmScript/changeWallpaper.sh
 	sleep 60m
 done
