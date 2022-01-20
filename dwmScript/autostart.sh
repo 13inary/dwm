@@ -6,7 +6,6 @@ redshift &
 compton -b --config ~/.config/compton/compton.conf &
 ibus-daemon -d -x -r &
 firefox &
-clash &
 while true; do
 	/usr/local/dwmScript/bar-message.sh
 	sleep 1m
@@ -17,3 +16,4 @@ done &
 #xset dpms 1800 0 
 /usr/local/dwmScript/touchpad-switch.sh
 /usr/local/dwmScript/sound-init.sh &
+clash &
