@@ -121,10 +121,10 @@ static Key keys[] = {
 	{ KeyPress,	MODKEY|Mod1Mask|ShiftMask,    XK_space,  spawn,          {.v = soundmute } },
 	{ KeyPress,	MODKEY|Mod1Mask|ShiftMask,    XK_t,		 spawn,          {.v = touchpadswitch } },
 
-	{ KeyRelease,	ShiftMask,		      0xffc7,  spawn,          {.v = screenshotpart } },
-	{ KeyPress,	MODKEY,			      0xffc7,  spawn,          {.v = screenshotwindow } },
-	{ KeyPress,	Mod1Mask,		      0xffc7,  spawn,          {.v = screenshotfull } },
-	{ KeyRelease,	Mod4Mask,		      0xffc7,  spawn,          {.v = screenshotocr } },
+	{ KeyRelease,	ShiftMask,		      XK_Print,  spawn,          {.v = screenshotpart } },
+	{ KeyPress,	MODKEY,			      XK_Print,  spawn,          {.v = screenshotwindow } },
+	{ KeyPress,	Mod1Mask,		      XK_Print,  spawn,          {.v = screenshotfull } },
+	{ KeyRelease,	Mod4Mask,		      XK_Print,  spawn,          {.v = screenshotocr } },
 
 	{ KeyPress,	Mod1Mask,                       XK_j,      focusstack,     {.i = +1 } },
 	{ KeyPress,	Mod1Mask,                       XK_k,      focusstack,     {.i = -1 } },
