@@ -1,8 +1,10 @@
 #!/bin/bash
 
 myCurrentBright=`brightnessctl g`
+myMaxBright=`brightnessctl m`
+myMinBright=`expr $myMaxBright / 100`
 
-if [ $myCurrentBright -gt 960 ] ; then
+if [ $myCurrentBright -gt $myMinBright ] ; then
 
 brightnessctl s 1%-
 
