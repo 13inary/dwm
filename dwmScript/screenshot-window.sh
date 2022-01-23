@@ -1,3 +1,3 @@
 #!/bin/bash
 
-scrot -q 100 -u ~/pictures/screenshot`now`.png
+scrot -q 100 -u ~/Pictures/screenshot`now`.png
