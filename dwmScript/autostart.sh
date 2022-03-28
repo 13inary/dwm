@@ -3,7 +3,7 @@
 alacritty --working-directory ~/ &
 redshift &
 #picom -o 0.95 -i 0.88 --detect-rounded-corners --vsync --blur-background-fixed -f -D 5 -c -b
-compton -b --config ~/.config/compton/compton.conf &
+compton -b --config ~/.config/compton-config/compton.conf &
 ibus-daemon -d -x -r &
 firefox &
 while true; do
