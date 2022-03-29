@@ -1,13 +1,13 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 5;        /* border pixel of windows */
+static const unsigned int borderpx  = 0;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const unsigned int gappih    = 10;       /* horiz inner gap between windows */
 static const unsigned int gappiv    = 10;       /* vert inner gap between windows */
 static const unsigned int gappoh    = 10;       /* horiz outer gap between windows and screen edge */
 static const unsigned int gappov    = 10;       /* vert outer gap between windows and screen edge */
-static       int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
+static       int smartgaps          = 1;        /* 1 means no outer gap when there is only one window */
 static const int showbar            = 0;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "Source code pro:size=20" };
@@ -24,7 +24,7 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "T", "t", "text", "video", "music", "XXX", "test", "work", "browser" };
+static const char *tags[] = { "T", "t", "text", "video", "music", "run", "test", "work", "browser" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -33,10 +33,10 @@ static const Rule rules[] = {
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+	{ "firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
 	{ "Go",     NULL,       NULL,       1 << 7,       0,           -1 },
-	{ "interface", NULL,       NULL,       1 << 6,       0,           -1 },
-	{ "xxx",     NULL,       NULL,       1 << 5,       0,           -1 },
+	{ "http", NULL,       NULL,       1 << 6,       0,           -1 },
+	{ "Google-chrome",     NULL,       NULL,       1 << 5,       0,           -1 },
 { "netease-cloud-music",NULL,     NULL,       1 << 4,       0,           -1 },
 	{ "mpv",      NULL,       NULL,       1 << 3,       0,           -1 },
 	{ "Wps",      NULL,       NULL,       1 << 2,       0,           -1 },
