@@ -16,4 +16,6 @@ done &
 #xset dpms 1800 0 
 /usr/local/dwmScript/touchpad-switch.sh
 /usr/local/dwmScript/sound-init.sh &
+cd ~/.config/clash/
+cat ~/.config/clash/mySubscription | xargs  ConvertSubscription
 clash &
