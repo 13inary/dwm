@@ -1,7 +1,10 @@
 #!/bin/bash
 
-scrot -q 100 -s ~/Pictures/ocr/tmp.png 
-tesseract -l chi_sim+eng  ~/Pictures/ocr/tmp.png  ~/Pictures/ocr/data
-cat ~/Pictures/ocr/data.txt | xsel -b
-rm ~/Pictures/ocr/tmp.png
-#rm ~/Pictures/ocr/data.txt
+rm /tmp/dwm_tesseract_ocr/tmp.png
+rm /tmp/dwm_tesseract_ocr/data.txt
+
+scrot -q 100 -s /tmp/dwm_tesseract_ocr/tmp.png
+
+tesseract -l chi_sim+eng  /tmp/dwm_tesseract_ocr/tmp.png  /tmp/dwm_tesseract_ocr/data
+
+cat /tmp/dwm_tesseract_ocr/data.txt | xsel -b
