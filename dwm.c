@@ -1472,7 +1472,9 @@ run(void)
 void
 runAutostart(void) {
 	/* system("cd ~/.dwm; ./autostart_blocking.sh"); */
-	system("cd /usr/local/dwmScript; ./autostart.sh &");
+	if (system("cd /usr/local/dwmScript; ./autostart.sh &")) {
+		printf("do autostart");
+	}
 }
 
 void
