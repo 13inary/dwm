@@ -102,9 +102,11 @@ static const char *screenshotpart[] = {"/usr/local/dwmScript/screenshot-part.sh"
 static const char *screenshotwindow[] = {"/usr/local/dwmScript/screenshot-window.sh", NULL};
 static const char *screenshotfull[] = {"/usr/local/dwmScript/screenshot-full.sh", NULL};
 static const char *screenshotocr[] = {"/usr/local/dwmScript/tesseractSimEng.sh", NULL};
+static const char *emptydo[]  = { "/usr/bin/echo", NULL };
 
 static Key keys[] = {
 	/* type		modifier                     key        function        argument */
+	{ KeyPress,	MODKEY,                       0x3b,      spawn,          {.v = emptydo } },
 	{ KeyPress,	MODKEY|Mod1Mask,              XK_p,      spawn,          {.v = dmenucmd } },
 	{ KeyPress,	MODKEY|Mod1Mask,              XK_Return, spawn,          {.v = termcmd } },
 	{ KeyPress,	MODKEY|Mod1Mask,              XK_n,      togglescratch,  {.v = scratchpadcmd } },
