@@ -107,6 +107,7 @@ static const char *emptydo[]  = { "/usr/bin/echo", NULL };
 static Key keys[] = {
 	/* type		modifier                     key        function        argument */
 	{ KeyPress,	MODKEY,                       0x3b,      spawn,          {.v = emptydo } },
+	{ KeyPress,	MODKEY,                       0x2e,      spawn,          {.v = emptydo } },
 	{ KeyPress,	MODKEY|Mod1Mask,              XK_p,      spawn,          {.v = dmenucmd } },
 	{ KeyPress,	MODKEY|Mod1Mask,              XK_Return, spawn,          {.v = termcmd } },
 	{ KeyPress,	MODKEY|Mod1Mask,              XK_n,      togglescratch,  {.v = scratchpadcmd } },
