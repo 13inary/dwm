@@ -19,10 +19,10 @@ done &
 mkdir /tmp/dwm_tesseract_ocr/
 
 # === clash ===
-cd ~/.config/clash/
-cat ~/.config/clash/mySubscription | xargs  ConvertSubscription
-sed -i "/port\s*:\s*7890\s*$/d" ~/.config/clash/config.yaml
-sed -i "/external-controller:/d" ~/.config/clash/config.yaml
-sed -i "/mixed-port:/d" ~/.config/clash/config.yaml
-sed -i "1i mixed-port: 7890" ~/.config/clash/config.yaml
-clash &
+# cd ~/.config/clash/
+# cat ~/.config/clash/mySubscription | xargs  ConvertSubscription
+# sed -i "/port\s*:\s*7890\s*$/d" ~/.config/clash/config.yaml
+# sed -i "/external-controller:/d" ~/.config/clash/config.yaml
+# sed -i "/mixed-port:/d" ~/.config/clash/config.yaml
+# sed -i "1i mixed-port: 7890" ~/.config/clash/config.yaml
+clash > /var/log/clash/clash.log &
