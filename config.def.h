@@ -107,7 +107,7 @@ static Key keys[] = {
 	{ KeyPress,	MODKEY|Mod1Mask,              XK_p,      spawn,          {.v = dmenucmd } },
 	{ KeyPress,	MODKEY|Mod1Mask,              XK_Return, spawn,          {.v = termcmd } },
 	{ KeyPress,	MODKEY|Mod1Mask,              XK_n,      togglescratch,  {.v = scratchpadcmd } },
-	{ KeyPress,	MODKEY|Mod1Mask,              XK_b,      togglebar,      {0} },
+	/* { KeyPress,	MODKEY|Mod1Mask,              XK_b,      togglebar,      {0} }, */
 	{ KeyPress,	MODKEY|Mod1Mask,              XK_b,      spawn,     	 {.v = barmessage } },
 
 	{ KeyPress,	MODKEY|Mod1Mask|ShiftMask,    XK_p,      spawn,          {.v = systempoweroff } },

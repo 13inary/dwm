@@ -5,7 +5,7 @@ redshift &
 compton -b --config ~/.config/compton-config/compton.conf &
 ibus-daemon -d -x -r &
 firefox &
-while true; do
+while false; do
 	/usr/local/dwmScript/bar-message.sh
 	sleep 1m
 done &
