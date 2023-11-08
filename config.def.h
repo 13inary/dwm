@@ -37,6 +37,7 @@ static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
 	{ "firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+	{ "feh",      NULL,       NULL,       0,            1,           -1 },
 };
 
 /* layout(s) */
@@ -97,6 +98,7 @@ static const char *barmessage[] = {"/usr/local/dwmScript/bar-message.sh", NULL};
 static const char *screenshotpart[] = {"/usr/local/dwmScript/screenshot-part.sh", NULL};
 static const char *screenshotwindow[] = {"/usr/local/dwmScript/screenshot-window.sh", NULL};
 static const char *screenshotfull[] = {"/usr/local/dwmScript/screenshot-full.sh", NULL};
+static const char *screenshotrefer[] = {"/usr/local/dwmScript/screenshot-refer.sh", NULL};
 static const char *screenshotocr[] = {"/usr/local/dwmScript/tesseractSimEng.sh", NULL};
 static const char *emptydo[]  = { "/usr/bin/echo", NULL };
 
@@ -121,9 +123,11 @@ static Key keys[] = {
 	{ KeyPress,	MODKEY|Mod1Mask|ShiftMask,    XK_t,		 spawn,          {.v = touchpadswitch } },
 
 	{ KeyRelease,	ShiftMask,		      XK_Print,  spawn,          {.v = screenshotpart } },
-	{ KeyPress,	MODKEY,			      XK_Print,  spawn,          {.v = screenshotwindow } },
+	/* { KeyPress,	MODKEY,			      XK_Print,  spawn,          {.v = screenshotwindow } }, */
 	{ KeyPress,	Mod1Mask,		      XK_Print,  spawn,          {.v = screenshotfull } },
 	{ KeyRelease,	Mod4Mask,		      XK_Print,  spawn,          {.v = screenshotocr } },
+	/* { KeyRelease,	MODKEY|Mod1Mask,	      XK_Print,  spawn,          {.v = screenshotrefer } }, */
+	{ KeyPress,	MODKEY,			      XK_Print,  spawn,          {.v = screenshotrefer } },
 
 	{ KeyPress,	Mod1Mask,                       XK_j,      focusstack,     {.i = +1 } },
 	{ KeyPress,	Mod1Mask,                       XK_k,      focusstack,     {.i = -1 } },
