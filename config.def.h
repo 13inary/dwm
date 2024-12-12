@@ -86,21 +86,25 @@ static const char *termcmd[]  = { "alacritty", NULL };
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "50x15", NULL };
 static const char *slockscreen[]  = { "slock", NULL };
-static const char *systempoweroff[]  = { "poweroff", NULL };
-static const char *systemreboot[]  = { "reboot", NULL };
-static const char *lightup[] = {"/usr/local/dwmScript/light-up.sh", NULL};
-static const char *lightdown[] = {"/usr/local/dwmScript/light-down.sh", NULL};
-static const char *soundup[] = {"/usr/local/dwmScript/sound-up.sh", NULL};
-static const char *sounddown[] = {"/usr/local/dwmScript/sound-down.sh", NULL};
-static const char *soundmute[] = {"/usr/local/dwmScript/sound-mute.sh", NULL};
-static const char *touchpadswitch[] = { "/usr/local/dwmScript/touchpad-switch.sh", NULL};
-static const char *barmessage[] = {"/usr/local/dwmScript/bar-message.sh", NULL};
+// static const char *systempoweroff[]  = { "poweroff", NULL };
+// static const char *systemreboot[]  = { "reboot", NULL };
+// static const char *lightup[] = {"/usr/local/dwmScript/light-up.sh", NULL};
+// static const char *lightdown[] = {"/usr/local/dwmScript/light-down.sh", NULL};
+// static const char *soundup[] = {"/usr/local/dwmScript/sound-up.sh", NULL};
+// static const char *sounddown[] = {"/usr/local/dwmScript/sound-down.sh", NULL};
+// static const char *soundmute[] = {"/usr/local/dwmScript/sound-mute.sh", NULL};
+// static const char *touchpadswitch[] = { "/usr/local/dwmScript/touchpad-switch.sh", NULL};
+// static const char *barmessage[] = {"/usr/local/dwmScript/bar-message.sh", NULL};
 static const char *screenshotpart[] = {"/usr/local/dwmScript/screenshot-part.sh", NULL};
 static const char *screenshotwindow[] = {"/usr/local/dwmScript/screenshot-window.sh", NULL};
 static const char *screenshotfull[] = {"/usr/local/dwmScript/screenshot-full.sh", NULL};
 static const char *screenshotrefer[] = {"/usr/local/dwmScript/screenshot-refer.sh", NULL};
 static const char *screenshotocr[] = {"/usr/local/dwmScript/tesseractSimEng.sh", NULL};
 static const char *emptydo[]  = { "/usr/bin/echo", NULL };
+static const char *hotcmdh[] = {"/usr/local/dwmScript/hotcmd-h.sh", NULL};
+static const char *hotcmdj[] = {"/usr/local/dwmScript/hotcmd-j.sh", NULL};
+static const char *hotcmdk[] = {"/usr/local/dwmScript/hotcmd-k.sh", NULL};
+static const char *hotcmdl[] = {"/usr/local/dwmScript/hotcmd-l.sh", NULL};
 
 static Key keys[] = {
 	/* type		modifier                     key        function        argument */
@@ -110,77 +114,91 @@ static Key keys[] = {
 	{ KeyPress,	MODKEY|Mod1Mask,              XK_Return, spawn,          {.v = termcmd } },
 	{ KeyPress,	MODKEY|Mod1Mask,              XK_n,      togglescratch,  {.v = scratchpadcmd } },
 	/* { KeyPress,	MODKEY|Mod1Mask,              XK_b,      togglebar,      {0} }, */
-	{ KeyPress,	MODKEY|Mod1Mask,              XK_b,      spawn,     	 {.v = barmessage } },
+	// { KeyPress,	MODKEY|Mod1Mask,              XK_b,      spawn,     	 {.v = barmessage } },
 
-	{ KeyPress,	MODKEY|Mod1Mask|ShiftMask,    XK_p,      spawn,          {.v = systempoweroff } },
-	{ KeyPress,	MODKEY|Mod1Mask|ShiftMask,    XK_r,      spawn,          {.v = systemreboot } },
+	// 系统操作
+	// { KeyPress,	MODKEY|Mod1Mask|ShiftMask,    XK_p,      spawn,          {.v = systempoweroff } },
+	// { KeyPress,	MODKEY|Mod1Mask|ShiftMask,    XK_r,      spawn,          {.v = systemreboot } },
 	{ KeyPress,	MODKEY|Mod1Mask|ShiftMask,    XK_l,      spawn,          {.v = slockscreen } },
-	{ KeyPress,	MODKEY|Mod1Mask|ShiftMask,    XK_Right,  spawn,          {.v = lightup } },
-	{ KeyPress,	MODKEY|Mod1Mask|ShiftMask,    XK_Left,   spawn,          {.v = lightdown } },
-	{ KeyPress,	MODKEY|Mod1Mask|ShiftMask,    XK_Up,     spawn,          {.v = soundup } },
-	{ KeyPress,	MODKEY|Mod1Mask|ShiftMask,    XK_Down,   spawn,          {.v = sounddown } },
-	{ KeyPress,	MODKEY|Mod1Mask|ShiftMask,    XK_space,  spawn,          {.v = soundmute } },
-	{ KeyPress,	MODKEY|Mod1Mask|ShiftMask,    XK_t,		 spawn,          {.v = touchpadswitch } },
+	// { KeyPress,	MODKEY|Mod1Mask|ShiftMask,    XK_Right,  spawn,          {.v = lightup } },
+	// { KeyPress,	MODKEY|Mod1Mask|ShiftMask,    XK_Left,   spawn,          {.v = lightdown } },
+	// { KeyPress,	MODKEY|Mod1Mask|ShiftMask,    XK_Up,     spawn,          {.v = soundup } },
+	// { KeyPress,	MODKEY|Mod1Mask|ShiftMask,    XK_Down,   spawn,          {.v = sounddown } },
+	// { KeyPress,	MODKEY|Mod1Mask|ShiftMask,    XK_space,  spawn,          {.v = soundmute } },
+	// { KeyPress,	MODKEY|Mod1Mask|ShiftMask,    XK_t,		 spawn,          {.v = touchpadswitch } },
 
+	// 截图
 	{ KeyRelease,	ShiftMask,		      XK_Print,  spawn,          {.v = screenshotpart } },
 	/* { KeyPress,	MODKEY,			      XK_Print,  spawn,          {.v = screenshotwindow } }, */
-	{ KeyPress,	Mod1Mask,		      XK_Print,  spawn,          {.v = screenshotfull } },
+	{ KeyPress,	    Mod1Mask,		      XK_Print,  spawn,          {.v = screenshotfull } },
 	{ KeyRelease,	Mod4Mask,		      XK_Print,  spawn,          {.v = screenshotocr } },
 	/* { KeyRelease,	MODKEY|Mod1Mask,	      XK_Print,  spawn,          {.v = screenshotrefer } }, */
-	{ KeyPress,	MODKEY,			      XK_Print,  spawn,          {.v = screenshotrefer } },
+	{ KeyPress,	    MODKEY,               XK_Print,  spawn,          {.v = screenshotrefer } },
 
-	{ KeyPress,	Mod1Mask,                       XK_j,      focusstack,     {.i = +1 } },
-	{ KeyPress,	Mod1Mask,                       XK_k,      focusstack,     {.i = -1 } },
-	{ KeyPress,	Mod1Mask,                       XK_l,      focusstack,     {.i = +1 } },
-	{ KeyPress,	Mod1Mask,                       XK_h,      focusstack,     {.i = -1 } },
-	{ KeyPress,	Mod1Mask,			      XK_m,      focusmaster,    {.i = +1} },
+	// 聚焦窗口
+	// { KeyPress,	Mod1Mask,                       XK_j,      focusstack,     {.i = +1 } },
+	// { KeyPress,	Mod1Mask,                       XK_k,      focusstack,     {.i = -1 } },
+	// { KeyPress,	Mod1Mask,                       XK_l,      focusstack,     {.i = +1 } },
+	// { KeyPress,	Mod1Mask,                       XK_h,      focusstack,     {.i = -1 } },
+	// { KeyPress,	Mod1Mask,			            XK_m,      focusmaster,    {.i = +1} },
 
-	{ KeyPress,	MODKEY|Mod1Mask,	      XK_j,      inplacerotate,  {.i = +1} },
-	{ KeyPress,	MODKEY|Mod1Mask,	      XK_k,      inplacerotate,  {.i = -1} },
-	{ KeyPress,	MODKEY|Mod1Mask,	      XK_h,      inplacerotate,  {.i = -2} },
-	{ KeyPress,	MODKEY|Mod1Mask,	      XK_l,      inplacerotate,  {.i = +2} },
+	// 排列窗口
+	{ KeyPress,	ShiftMask|Mod1Mask,	      XK_j,      inplacerotate,  {.i = +1} },
+	{ KeyPress,	ShiftMask|Mod1Mask,	      XK_k,      inplacerotate,  {.i = -1} },
+	{ KeyPress,	ShiftMask|Mod1Mask,	      XK_h,      inplacerotate,  {.i = -2} },
+	{ KeyPress,	ShiftMask|Mod1Mask,	      XK_l,      inplacerotate,  {.i = +2} },
 
-	{ KeyPress,	MODKEY|Mod1Mask,              XK_i,      incnmaster,     {.i = +1 } },
-	{ KeyPress,	MODKEY|Mod1Mask,              XK_d,      incnmaster,     {.i = -1 } },
+	// 热功能按键，需要注意按键释放和触发的链接性问题
+	{ KeyRelease,	MODKEY|Mod1Mask,	      XK_h,      spawn,  {.v = hotcmdh } },
+	{ KeyRelease,	MODKEY|Mod1Mask,	      XK_j,      spawn,  {.v = hotcmdj } },
+	{ KeyRelease,	MODKEY|Mod1Mask,	      XK_k,      spawn,  {.v = hotcmdk } },
+	{ KeyRelease,	MODKEY|Mod1Mask,	      XK_l,      spawn,  {.v = hotcmdl } },
 
+	// { KeyPress,	MODKEY|Mod1Mask,              XK_i,      incnmaster,     {.i = +1 } },
+	// { KeyPress,	MODKEY|Mod1Mask,              XK_d,      incnmaster,     {.i = -1 } },
+
+	// 放大窗口
 	{ KeyPress,	MODKEY|Mod1Mask,              0x5b,      setmfact,       {.f = -0.05} },
 	{ KeyPress,	MODKEY|Mod1Mask,              0x5d,      setmfact,       {.f = +0.05} },
-	{ KeyPress,	MODKEY|Mod1Mask,              XK_y, 	 zoom,           {0} },
+	// { KeyPress,	MODKEY|Mod1Mask,              XK_y, 	 zoom,           {0} },
 
-	{ KeyPress,	MODKEY|Mod4Mask,              XK_u,      incrgaps,       {.i = +1 } },
-	{ KeyPress,	MODKEY|Mod4Mask|ShiftMask,    XK_u,      incrgaps,       {.i = -1 } },
-	{ KeyPress,	MODKEY|Mod4Mask,              XK_i,      incrigaps,      {.i = +1 } },
-	{ KeyPress,	MODKEY|Mod4Mask|ShiftMask,    XK_i,      incrigaps,      {.i = -1 } },
-	{ KeyPress,	MODKEY|Mod4Mask,              XK_o,      incrogaps,      {.i = +1 } },
-	{ KeyPress,	MODKEY|Mod4Mask|ShiftMask,    XK_o,      incrogaps,      {.i = -1 } },
-	{ KeyPress,	MODKEY|Mod4Mask,              XK_6,      incrihgaps,     {.i = +1 } },
-	{ KeyPress,	MODKEY|Mod4Mask|ShiftMask,    XK_6,      incrihgaps,     {.i = -1 } },
-	{ KeyPress,	MODKEY|Mod4Mask,              XK_7,      incrivgaps,     {.i = +1 } },
-	{ KeyPress,	MODKEY|Mod4Mask|ShiftMask,    XK_7,      incrivgaps,     {.i = -1 } },
-	{ KeyPress,	MODKEY|Mod4Mask,              XK_8,      incrohgaps,     {.i = +1 } },
-	{ KeyPress,	MODKEY|Mod4Mask|ShiftMask,    XK_8,      incrohgaps,     {.i = -1 } },
-	{ KeyPress,	MODKEY|Mod4Mask,              XK_9,      incrovgaps,     {.i = +1 } },
-	{ KeyPress,	MODKEY|Mod4Mask|ShiftMask,    XK_9,      incrovgaps,     {.i = -1 } },
-	{ KeyPress,	MODKEY|Mod4Mask,              XK_0,      togglegaps,     {0} },
-	{ KeyPress,	MODKEY|Mod4Mask|ShiftMask,    XK_0,      defaultgaps,    {0} },
+	// 窗口间隔
+	// { KeyPress,	MODKEY|Mod4Mask,              XK_u,      incrgaps,       {.i = +1 } },
+	// { KeyPress,	MODKEY|Mod4Mask|ShiftMask,    XK_u,      incrgaps,       {.i = -1 } },
+	// { KeyPress,	MODKEY|Mod4Mask,              XK_i,      incrigaps,      {.i = +1 } },
+	// { KeyPress,	MODKEY|Mod4Mask|ShiftMask,    XK_i,      incrigaps,      {.i = -1 } },
+	// { KeyPress,	MODKEY|Mod4Mask,              XK_o,      incrogaps,      {.i = +1 } },
+	// { KeyPress,	MODKEY|Mod4Mask|ShiftMask,    XK_o,      incrogaps,      {.i = -1 } },
+	// { KeyPress,	MODKEY|Mod4Mask,              XK_6,      incrihgaps,     {.i = +1 } },
+	// { KeyPress,	MODKEY|Mod4Mask|ShiftMask,    XK_6,      incrihgaps,     {.i = -1 } },
+	// { KeyPress,	MODKEY|Mod4Mask,              XK_7,      incrivgaps,     {.i = +1 } },
+	// { KeyPress,	MODKEY|Mod4Mask|ShiftMask,    XK_7,      incrivgaps,     {.i = -1 } },
+	// { KeyPress,	MODKEY|Mod4Mask,              XK_8,      incrohgaps,     {.i = +1 } },
+	// { KeyPress,	MODKEY|Mod4Mask|ShiftMask,    XK_8,      incrohgaps,     {.i = -1 } },
+	// { KeyPress,	MODKEY|Mod4Mask,              XK_9,      incrovgaps,     {.i = +1 } },
+	// { KeyPress,	MODKEY|Mod4Mask|ShiftMask,    XK_9,      incrovgaps,     {.i = -1 } },
+	// { KeyPress,	MODKEY|Mod4Mask,              XK_0,      togglegaps,     {0} },
+	// { KeyPress,	MODKEY|Mod4Mask|ShiftMask,    XK_0,      defaultgaps,    {0} },
 
 	{ KeyPress,	Mod1Mask,                     XK_Tab,    view,           {0} },
 	{ KeyPress,	MODKEY|Mod1Mask,              XK_z,      killclient,     {0} },
 
+	// 窗口排列方式
 	{ KeyPress,	MODKEY|Mod1Mask,              XK_t,      setlayout,      {.v = &layouts[1]} },
-	{ KeyPress,	MODKEY|Mod1Mask,              XK_f,      setlayout,      {.v = &layouts[13]} },
+	// { KeyPress,	MODKEY|Mod1Mask,              XK_f,      setlayout,      {.v = &layouts[13]} },
 	{ KeyPress,	MODKEY|Mod1Mask,              XK_m,      setlayout,      {.v = &layouts[0]} },
-	{ KeyPress,	MODKEY|Mod1Mask,              XK_space,  setlayout,      {0} },
+	// { KeyPress,	MODKEY|Mod1Mask,              XK_space,  setlayout,      {0} },
 
-	{ KeyPress,	MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
+	// { KeyPress,	MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 
 	{ KeyPress,	Mod1Mask,                     XK_0,      view,           {.ui = ~0 } },
 	{ KeyPress,	Mod1Mask|ShiftMask,           XK_0,      tag,            {.ui = ~0 } },
 
-	{ KeyPress,	Mod4Mask,                     XK_comma,  focusmon,       {.i = -1 } },
-	{ KeyPress,	Mod4Mask,                     XK_period, focusmon,       {.i = +1 } },
-	{ KeyPress,	Mod4Mask|ShiftMask,           XK_comma,  tagmon,         {.i = -1 } },
-	{ KeyPress,	Mod4Mask|ShiftMask,           XK_period, tagmon,         {.i = +1 } },
+	// 分屏
+	// { KeyPress,	Mod4Mask,                     XK_comma,  focusmon,       {.i = -1 } },
+	// { KeyPress,	Mod4Mask,                     XK_period, focusmon,       {.i = +1 } },
+	// { KeyPress,	Mod4Mask|ShiftMask,           XK_comma,  tagmon,         {.i = -1 } },
+	// { KeyPress,	Mod4Mask|ShiftMask,           XK_period, tagmon,         {.i = +1 } },
 
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
