@@ -14,8 +14,11 @@ firefox &
 #xset dpms 1800 0
 /usr/local/dwmScript/touchpad-switch.sh
 /usr/local/dwmScript/sound-init.sh &
+
+# === screen light ===
 xset s off
 xset -dpms
+xset q
 
 # === orc ===
 mkdir /tmp/dwm_tesseract_ocr/
